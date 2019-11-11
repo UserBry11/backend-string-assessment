@@ -15,11 +15,21 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
-
+__author__ = 'UserBry'
 
 def verbing(s):
-    """Your code goADSAFDFAADASFDADFSDASDes here.  Edit this docstring."""
-    return
+    """Your code goes here.  Edit this docstring."""
+    if len(s) < 3:
+        return s 
+    wordending = 'ing' if s[-3:] != 'ing' else 'ly' 
+        
+    return s + wordending
+    # if len(s) >= 3:
+    #     if s[-3:]  != 'ing':
+    #         s = s + 'ing'
+    #     else: 
+    #         s = s + 'ly'
+    # return s
 
 
 # E. not_bad
@@ -32,7 +42,14 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    n4not = s.find('not')
+    b4bad = s.find('bad')
+
+    return s[0:n4not] + 'good' + s[b4bad+len('bad'):] if n4not < b4bad else s
+    # if n4not != -1 and b4bad != -1 and b4bad > n4not:
+    #     s = s[0:n4not]+ 'good' + s[b4bad + 3:]
+     
+    # return s
 
 
 # F. front_back
@@ -44,7 +61,18 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     """Your code goes here.  Edit this docstring."""
-    return
+    middleA = len(a) / 2 + len(a) % 2
+    middleB = len(b) / 2 + len(b) % 2
+    # if len(a) % 2 != 0:
+    #     middleA += 1
+    # if len(b) % 2 != 0:
+    #     middleB += 1
+
+    
+
+    
+
+    return a[0:middleA] + b[0:middleB] + a[middleA:] + b[middleB:]
 
 
 # Provided simple test() function used in main() to print
